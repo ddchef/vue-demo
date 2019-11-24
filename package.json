@@ -4,7 +4,8 @@
   "description": "webpack 历练之路",
   "author": "ddchef",
   "scripts": {
-    "dev":"webpack"
+    "build": "webpack",
+    "dev": ""
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
