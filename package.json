@@ -2,11 +2,17 @@
   "name": "vue-webpack",
   "version": "0.0.1",
   "description": "webpack 历练之路",
-  "main": "index.js",
   "author": "ddchef",
+  "scripts": {
+    "dev":"webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ddchef/vue-demo.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
 }
