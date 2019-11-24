@@ -1,0 +1,12 @@
+{
+  "name": "vue-webpack",
+  "version": "0.0.1",
+  "description": "webpack 历练之路",
+  "main": "index.js",
+  "author": "ddchef",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddchef/vue-demo.git"
+  },
+  "license": "MIT"
+}
