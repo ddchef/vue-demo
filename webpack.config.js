@@ -1,5 +1,6 @@
 const Path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
   entry:{
     app: './src/index.js',
@@ -10,6 +11,11 @@ module.exports = {
     path: Path.resolve(__dirname,'./dist')
   },
   plugins:[
+    // clear dist file
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns:['dist']
+    }),
+    // creat index.html
     new HtmlWebpackPlugin({
       title:'vue-webpack'
     })
@@ -35,7 +41,6 @@ module.exports = {
           'file-loader'
         ]
       },
-
     ]
   }
 }
