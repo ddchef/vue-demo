@@ -1,7 +1,7 @@
 const WebpackDevServer = require('webpack-dev-server')
 const Webpack = require('webpack')
 
-const config = require('./webpack.config.js')
+const config = require('./webpack.dev.js')
 const options = {
   contentBase: './dist',
   hot: true,
