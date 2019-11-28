@@ -1,12 +1,12 @@
 import './index.css'
-import Icon from './cola.png'
+import Icon from './asset/cola.png'
 import printSomething from './print'
-document.querySelector('body').innerText="hello word"
 const image = new Image()
 image.src = Icon
 document.querySelector('body').append(image)
+document.querySelector('body').append('hello word')
 const btn = document.createElement('button')
-btn.innerText = '打印数据'
+btn.innerText = '按钮'
 btn.addEventListener('click',function(){
   printSomething()
 })

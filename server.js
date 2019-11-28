@@ -1,15 +1,16 @@
-const Express = require('express')
-const WebpackDevMiddleware = require('webpack-dev-middleware')
+const WebpackDevServer = require('webpack-dev-server')
 const Webpack = require('webpack')
 
-const app = Express()
-const config = require('./webpack.config')
+const config = require('./webpack.config.js')
+const options = {
+  contentBase: './dist',
+  hot: true,
+  host: 'localhost'
+}
+WebpackDevServer.addDevServerEntrypoints(config,options)
 const compiler = Webpack(config)
+const app = new WebpackDevServer(compiler,options)
 
-app.use(WebpackDevMiddleware(compiler,{
-  publicPath: config.output.publicPath
-}))
-
-app.listen(3000,function(){
-  console.log('server is start\n listen http://localhost:3000')
+app.listen(3000,'localhost',function(){
+  console.log(' dev server is listening http://localhost:3000\n')
 })

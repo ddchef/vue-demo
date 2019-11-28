@@ -5,7 +5,7 @@
   "author": "ddchef",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack --watch",
+    "dev": "webpack-dev-server --open",
     "start": "node server.js"
   },
   "repository": {

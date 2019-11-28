@@ -1,10 +1,10 @@
 const Path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
   entry:{
-    app: './src/index.js',
-    print: './src/print.js'
+    app: './src/index.js'
   },
   output:{
     filename:'[name].bundle.js',
@@ -20,7 +20,9 @@ module.exports = {
     // creat index.html
     new HtmlWebpackPlugin({
       title:'vue-webpack'
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module:{
     rules:[
