@@ -1,3 +1,3 @@
 export default function printSomething(){
-  console.log('hello')
+  console.error('hello')
 }

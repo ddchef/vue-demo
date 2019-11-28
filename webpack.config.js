@@ -8,8 +8,10 @@ module.exports = {
   },
   output:{
     filename:'[name].bundle.js',
-    path: Path.resolve(__dirname,'./dist')
+    path: Path.resolve(__dirname,'./dist'),
+    publicPath:'/'
   },
+  devtool:'inline-source-map',
   plugins:[
     // clear dist file
     new CleanWebpackPlugin({
