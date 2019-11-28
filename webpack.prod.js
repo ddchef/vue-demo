@@ -13,6 +13,15 @@ module.exports=merge(common,{
         test: /\.js(\?.*)?$/i,
       }),
     ],
+    splitChunks: {
+      cacheGroups:{
+        vendors:{
+          test:/node_modules/,
+          name:'vendors',
+          chunks: 'all'
+        }
+      }
+    }
   },
   plugins:[
     // setting process.env.NODE_ENV

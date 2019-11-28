@@ -1,14 +1,15 @@
 const Path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
   entry:{
-    app: './src/index.js'
+    app: './src/main.js'
   },
   output:{
     filename:'[name].bundle.js',
     path: Path.resolve(__dirname,'./dist'),
-    publicPath:'/'
+    publicPath:'./'
   },
   plugins:[
     // clear dist file
@@ -17,8 +18,11 @@ module.exports = {
     }),
     // creat index.html
     new HtmlWebpackPlugin({
-      title:'vue-webpack'
-    })
+      template: './index.html',
+      title:'vue-webpack',
+      favicon: './static/favicon.ico'
+    }),
+    new VueLoaderPlugin()
   ],
   module:{
     rules:[
