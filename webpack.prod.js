@@ -2,10 +2,14 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const common = require('./webpack.common')
 const TerserPlugin = require('terser-webpack-plugin')
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports=merge(common,{
   mode: 'production',
   devtool: 'source-map',
+  output:{
+    filename:'js/[name].[contenthash].js'
+  },
   optimization: {
     minimize: true,
     minimizer: [
@@ -16,9 +20,9 @@ module.exports=merge(common,{
     splitChunks: {
       cacheGroups:{
         vendors:{
-          test:/node_modules/,
+          test:/[\\/]node_modules[\\/]/,
           name:'vendors',
-          chunks: 'all'
+          chunks: 'initial'
         }
       }
     }
@@ -28,5 +32,10 @@ module.exports=merge(common,{
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
+    // 分离css
+    // new MiniCssExtractPlugin({
+    //   filename: "css/[name].[hash].css",
+    //   chunkFilename: 'css/[id].[hash].css'
+    // })
   ]
 })

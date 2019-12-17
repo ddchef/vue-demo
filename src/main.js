@@ -1,2 +1,5 @@
-import _ from 'lodash'
-console.log(_.chunk([1,2,3,4,5,6],2))
+import Vue from 'vue'
+import App from './app.vue'
+new Vue({
+  render: (h)=>h(App)
+}).$mount('#app')
