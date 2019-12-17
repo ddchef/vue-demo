@@ -24,7 +24,10 @@
       "git add"
     ]
   },
-  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "vue": "^2.6.10"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
@@ -57,8 +60,5 @@
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "vue": "^2.6.10"
-  }
+  "license": "MIT"
 }
