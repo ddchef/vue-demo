@@ -6,23 +6,46 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "lint": "eslint --fix --ext .js --ext .jsx --ext .vue src/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ddchef/vue-demo.git"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.0.1",
     "express": "^4.17.1",
     "file-loader": "^4.3.0",
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.8.0",
     "style-loader": "^1.0.0",
     "terser-webpack-plugin": "^2.2.1",
