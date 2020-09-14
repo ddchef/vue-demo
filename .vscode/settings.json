@@ -1,14 +1,23 @@
 {
-  "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      {
-          "language": "vue",
-          "autoFix": true
-      }
-  ],
   "eslint.run": "onSave",
   "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-  }
+  },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ]
 }

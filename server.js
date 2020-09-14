@@ -7,10 +7,10 @@ const options = {
   hot: true,
   host: 'localhost'
 }
-WebpackDevServer.addDevServerEntrypoints(config,options)
+WebpackDevServer.addDevServerEntrypoints(config, options)
 const compiler = Webpack(config)
-const app = new WebpackDevServer(compiler,options)
+const app = new WebpackDevServer(compiler, options)
 
-app.listen(3000,'localhost',function(){
+app.listen(3000, 'localhost', function () {
   console.log(' dev server is listening http://localhost:3000\n')
 })

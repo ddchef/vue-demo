@@ -16,6 +16,11 @@ module.exports = {
     path: Path.resolve(__dirname, './dist'),
     publicPath: './'
   },
+  resolve: {
+    alias: {
+      '@': Path.resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     // unchange hash
     new webpack.HashedModuleIdsPlugin(),
